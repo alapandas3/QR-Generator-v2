@@ -8,7 +8,7 @@ h1{
     font-family: sans-serif;
     text-align: center;
     margin: auto auto auto auto;
-    margin: 10%;
+    margin: 8%;
 }
 div.maindiv{
     background-color: #274C77;
@@ -16,7 +16,7 @@ div.maindiv{
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    margin: auto auto auto auto;
+    margin: -100px auto auto auto;
     width: fit-content;
     align-items: center;
 }
