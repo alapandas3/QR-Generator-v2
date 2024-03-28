@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- displays site properly based on user's device -->
     <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | QR code component</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: #3e52a3;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>QR Code Generator</h1>
-    <div class="maindiv">
-        <div >
-            <img id="qrc" src= alt="QR Code">
+    <div id="main">
+        <div id="container">
+            <div id="childcontainer">
+                <div id="loader" style="justify-content: center;
+                display: flex;
+                width: 100%;
+                height: 250px;
+                border-radius: 20px;
+                background-color: #0066ff;
+                align-items: center;">Type...</div>
+                <img id="one" style="display: none;" src="" alt="QRCode">
+            </div>
         </div>
-        <div class="main">
-            <input type="text" id="ip">
-            <button id="button">Fetch</button>
+        <div id="two">
+            <p id="work">
+                <input type="text" name="input" id="input">
+                <button id="button" onclick="worker()">Fetch</button>
+            </p>
+            <h3 id="title">
+                Title Text
+            </h3>
+            <h5 id="quote">
+                "Love is like a friendship caught on fire. In the beginning a flame, very pretty, often hot and fierce,
+                but still only light and flickering. As love grows older, our hearts mature and our love becomes as
+                coals, deep-burning and unquenchable."
+            </h5>
         </div>
     </div>
+
 </body>
+<script>
+
+</script>
+
 </html>

@@ -1,33 +1,50 @@
-window.addEventListener("DOMContentLoaded", (event) => {
-    const inputBox = document.getElementById("ip");
-    const imgc = document.getElementById('qrc');
-    const colors = ["#6096BA", "#a3cef1", "#8b8c89", "#e7ecef"];
-    inputBox.addEventListener('input', function() {
-        if (inputBox.value === '') {
-            imgc.style.display = 'none';
-        } else {
-            imgc.src='';
-            imgc.style.display = 'block'; // Show the image container
-        }
-    });
-    function getImage() {
-        const url = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=";
-        const inptext = inputBox.value;
-        const finalurl = url.concat(inptext);
+function loader(text) {
 
-        if (inptext.length <= 0) {
-            alert("EMPTY INPUT");
-            return;
-        }
+    document.getElementById("loader").style.display = "block";
 
-        imgc.style.display = 'block';
-        imgc.src = finalurl;
+    const url = `https://api.qrserver.com/v1/create-qr-code/?data=${text}&size=300x300&amp&color=fff&bgcolor=2d81ff`;
+    let img = document.getElementById("one");
+    let title = document.getElementById("title");
 
-        document.body.style.backgroundColor = colors[0];
+    fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+            img.src = URL.createObjectURL(blob);
+            title.textContent = `Hey ${text} your Quote of the Day is:`;
+
+
+            document.getElementById("loader").style.display = "flex";
+            document.getElementById("loader").style.justifyContent = "center";
+            document.getElementById("loader").style.alignItems = "center";
+            document.getElementById("loader").innerHTML = "Loading....";
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("one").style.display = "block";
+        });
+}
+
+function worker() {
+    const textinp = document.getElementById("input").value;
+    const url = `https://api.quotable.io/random`;
+    let quote = document.getElementById("quote");
+
+    document.getElementById("input").disabled = true;
+    document.getElementById("button").disabled = true;
+    if (textinp != '') {
+        fetch(url)
+            .then(response => response.text())
+            .then((response) => {
+                var i = JSON.parse(response);
+
+                quote.innerHTML = '"' + i.content + '"';
+            })
+            .catch(err => console.log(err))
+
+        loader(textinp);
+        document.getElementById("input").disabled = false;
+        document.getElementById("button").disabled = false;
+
     }
-
-    const button = document.getElementById("button");
-    button.addEventListener('click', function () {
-        getImage();
-    });
-});
+    else {
+        quote.innerHTML = '';
+    }
+}
