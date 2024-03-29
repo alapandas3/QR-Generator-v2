@@ -48,11 +48,12 @@ body {
     padding: 6px;
 }
 
-#container {}
 
 #one {
-
-    width: 100%;
+    position: absolute;
+    width: 280px;
+    height: 250px;
+    
     padding: 8px;
     color: blue;
 
@@ -90,18 +91,18 @@ input {
     width: 100%;
     text-align: left;
     border-radius: 20px;
-    padding-right: 52px;
+    padding-right: 51px;
     padding: 9px;
+    border: 1px solid #0066ff;
 }
 
 button {
     position: absolute;
-    transform: translate(-52px, 3px);
+    transform: translate(-52px, 2px);
     background-color: #0066ff;
     border-radius: 18px;
     padding: 8px;
-    border: #000;
-
+    border: 1px;
 }
 
 #quote {

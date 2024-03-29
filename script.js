@@ -1,6 +1,6 @@
 function loader(text) {
 
-    document.getElementById("loader").style.display = "block";
+    document.getElementById("loader").style.display = "flex";
     document.getElementById("one").style.display = "none";
     let text_copy=text;
     if(text=="Sandipan" || text=="sandipan")
@@ -20,7 +20,8 @@ function loader(text) {
 
 
             document.getElementById("loader").innerHTML = "Loading....";
-            document.getElementById("loader").style.display = "none";
+            document.getElementById("loader").style.alignItems = "Center";
+            // document.getElementById("loader").style.display = "none";
             document.getElementById("one").style.display = "block";
             document.getElementById("button").style.backgroundColor = '#0066ff';
         });
