@@ -2,8 +2,12 @@ function loader(text) {
 
     document.getElementById("loader").style.display = "block";
     document.getElementById("one").style.display = "none";
-
-    const url = `https://api.qrserver.com/v1/create-qr-code/?data=${text}&size=300x300&amp&color=fff&bgcolor=2d81ff`;
+    let text_copy=text;
+    if(text=="Sandipan" || text=="sandipan")
+    {
+        text_copy='https://www.pngitem.com/pimgs/m/400-4008725_shin-chan-with-backpack-image-crayon-shin-chan.png';
+    }
+    let url = `https://api.qrserver.com/v1/create-qr-code/?data=${text_copy}&size=300x300&amp&color=fff&bgcolor=2d81ff`;
     let img = document.getElementById("one");
     let title = document.getElementById("title");
 
