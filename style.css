@@ -98,10 +98,10 @@ input {
 
 button {
     position: absolute;
-    transform: translate(-52px, 3px);
+    transform: translate(-51px, 1px);
     background-color: #0066ff;
     border-radius: 18px;
-    padding: 8px;
+    padding: 9px;
     border: 1px;
 }
 
