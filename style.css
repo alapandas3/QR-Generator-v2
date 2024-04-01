@@ -51,7 +51,7 @@ body {
 
 #one {
     position: absolute;
-    width: 280px;
+    width: 270px;
     height: 250px;
 
     padding: 8px;
@@ -109,12 +109,10 @@ button {
     position: absolute;
     transform: translateY(2px);
     right: 1%;
-
-
     background-color: #0066ff;
     border-radius: 18px;
     padding: 11px;
-
+    color: white;
     border: 1px;
 }
 
